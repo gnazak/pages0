@@ -4,6 +4,7 @@ title: Posts By Tags
 permalink: /tags
 ---
 
+{% comment %}
 <p>Total items: {{ site.tags | length }}</p>
 
 {% assign tag_names = "" | split: "|"  %}
@@ -15,11 +16,12 @@ permalink: /tags
 {% assign tag_names = tag_names | sort %}
 
 {% include tag_cloud.html tag_names=tag_names %}
+{% endcomment %}
 
 <hr>
 
 <section class="posts-by-tags">
-  {% for tag_name in tag_names %}
+  {% for tag_name in site.tags %}
     <div>
       <h3 id="{{ tag_name }}">
         {{ tag_name | capitalize | replace: "_", " " }}
