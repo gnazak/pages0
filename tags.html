@@ -4,6 +4,8 @@ title: Posts By Tags
 permalink: /tags
 ---
 
+<p>Total items: {{ site.tags | length }}</p>
+
 {% assign tag_names = "" | split: "|"  %}
 
 {% for posts_by_tag in site.tags %}
